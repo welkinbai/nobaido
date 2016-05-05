@@ -93,7 +93,7 @@
         if (text == '搜索') {
             window.open("http://cn.bing.com/search?q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '英文搜索') {
-            window.open("http://global.bing.com/search?q=" + document.getElementsByClassName('input')[0].value+"&setmkt=en-us&setlang=en-us&FORM=SECNEN");
+            window.open("http://global.bing.com/search?q=" + document.getElementsByClassName('input')[0].value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
         } else if (text == '知乎') {
             window.open("https://www.zhihu.com/search?type=content&q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '图片') {
@@ -102,6 +102,10 @@
             window.open("http://cn.bing.com/videos/search?q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '地图') {
             window.open("http://ditu.amap.com/search?query=" + document.getElementsByClassName('input')[0].value);
+        } else if (text == '文献') {
+            window.open("http://epub.cnki.net/kns/brief/default_result.aspx");
+        } else if (text == '兴趣') {
+            window.open("https://www.douban.com/group/search?cat=1019&q=" + document.getElementsByClassName('input')[0].value);
         }
     }
 </script>
