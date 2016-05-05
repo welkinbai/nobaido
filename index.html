@@ -43,11 +43,12 @@
     
     .div-a {
         margin-top: 20px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
     
     .visited {
-        text-decoration: underline;
+        border-bottom: 2px solid #0014FF;
+        padding-bottom: 2px;
     }
 </style>
 <title>No Baido</title>
@@ -93,15 +94,15 @@
         if (text == '搜索') {
             window.open("http://cn.bing.com/search?q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '英文搜索') {
-            window.open(" http://global.bing.com/search?q=" + document.getElementsByClassName('input')[0].value);
+            window.open("http://global.bing.com/search?q=" + document.getElementsByClassName('input')[0].value+"&setmkt=en-us&setlang=en-us&FORM=SECNEN");
         } else if (text == '知乎') {
-            window.open(" https://www.zhihu.com/search?type=content&q=" + document.getElementsByClassName('input')[0].value);
+            window.open("https://www.zhihu.com/search?type=content&q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '图片') {
-            window.open(" http://cn.bing.com/images/search?q=" + document.getElementsByClassName('input')[0].value);
+            window.open("http://cn.bing.com/images/search?q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '视频') {
-            window.open(" http://cn.bing.com/videos/search?q=" + document.getElementsByClassName('input')[0].value);
+            window.open("http://cn.bing.com/videos/search?q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '地图') {
-            window.open(" http://ditu.amap.com/search?query=" + document.getElementsByClassName('input')[0].value);
+            window.open("http://ditu.amap.com/search?query=" + document.getElementsByClassName('input')[0].value);
         }
     }
 </script>
