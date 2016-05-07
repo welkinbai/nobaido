@@ -45,6 +45,10 @@
         margin-top: 20px;
         margin-bottom: 10px;
     }
+	
+	div a {
+		cursor:pointer;
+	}
     
     .visited {
         border-bottom: 2px solid #0014FF;
@@ -69,6 +73,8 @@
             <a>视频</a>
             <a>地图</a>
             <a>兴趣</a>
+			<a>微博</a>
+			<a>图书</a>
         </div>
         <div>
             <input id="input" class="input"></input><button class="butt" onclick="buttonClick()">Go</button>
@@ -124,12 +130,16 @@
 					_:new Date(),
 				},
 				error: function() {
-					window.open("http://epub.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&dbPrefix=SCDB&dbCatalog=%e4%b8%ad%e5%9b%bd%e5%ad%a6%e6%9c%af%e6%96%87%e7%8c%ae%e7%bd%91%e7%bb%9c%e5%87%ba%e7%89%88%e6%80%bb%e5%ba%93&ConfigFile=SCDBINDEX.xml&research=off&t="+new Date()+"&keyValue="+document.getElementsByClassName('input')[0].value+"&S=1");
+					window.open("http://epub.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&dbPrefix=SCDB&dbCatalog=中国学术文献网络出版总库&ConfigFile=SCDBINDEX.xml&research=off&t="+new Date()+"&keyValue="+document.getElementsByClassName('input')[0].value+"&S=1");
 				}
 			});
         } else if (text == '兴趣') {
             window.open("https://www.douban.com/group/search?cat=1019&q=" + document.getElementsByClassName('input')[0].value);
-        }
+        } else if(text == '微博') {
+			window.open("http://s.weibo.com/weibo/" + document.getElementsByClassName('input')[0].value+"&Refer=STopic_box");
+		} else if(text == '图书') {
+			window.open("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + document.getElementsByClassName('input')[0].value);
+		}
     }
 	$("#input").bind('keydown', function (e) {
 		var key = e.which;
