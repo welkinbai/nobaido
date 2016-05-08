@@ -19,8 +19,8 @@ function buttonClick() {
         urlLink("http://global.bing.com/search?q=" + value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
         //window.open("http://global.bing.com/search?q=" + document.getElementsByClassName('input')[0].value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
     } else if (text == '知乎') {
-        urlLink("https://www.zhihu.com/search?type=content&q=" + value);
-        //window.open("https://www.zhihu.com/search?type=content&q=" + document.getElementsByClassName('input')[0].value);
+        //urlLink("https://www.zhihu.com/search?type=content&q=" + value);
+        window.open("https://www.zhihu.com/search?type=content&q=" + value);
     } else if (text == '图片') {
         urlLink("http://cn.bing.com/images/search?q=" + value);
         //window.open("http://cn.bing.com/images/search?q=" + document.getElementsByClassName('input')[0].value);
@@ -56,18 +56,13 @@ function buttonClick() {
             }
         });
     } else if (text == '兴趣') {
-        urlLink("https://www.douban.com/group/search?cat=1019&q=" + value);
-        //window.open("https://www.douban.com/group/search?cat=1019&q=" + document.getElementsByClassName('input')[0].value);
+        //urlLink("https://www.douban.com/group/search?cat=1019&q=" + value);
+        window.open("https://www.douban.com/group/search?cat=1019&q=" + value);
     } else if (text == '微博') {
-//            urlLink("http://s.weibo.com/weibo/" + value + "&Refer=STopic_box");
-        if(document.getElementsByClassName('input')[0]==null){
-            window.open("http://s.weibo.com/weibo/" + document.getElementsByClassName('li-input')[0].value + "&Refer=STopic_box");
-        }else{
-            window.open("http://s.weibo.com/weibo/" + document.getElementsByClassName('input')[0].value + "&Refer=STopic_box");
-        }
+		window.open("http://s.weibo.com/weibo/" + value + "&Refer=STopic_box");
     } else if (text == '图书') {
-        urlLink("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + value);
-        //window.open("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + document.getElementsByClassName('input')[0].value);
+        //urlLink("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + value);
+        window.open("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + value);
     }
 }
 $("#input").bind('keydown', function (e) {
@@ -112,4 +107,8 @@ function resizeBody() {
 function isNull(obj) {
     if (typeof(obj)=="undefined" || obj==0 || obj ==null) return true;
     return false;
+}
+
+function goBack() {
+	location.href = "http://www.nobaido.com";
 }

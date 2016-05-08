@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var element = document.getElementsByClassName('div-a')[0].getElementsByTagName('a');
+    var element = $(".div-a").find("a");
     for (var i = 0; i < element.length; i++) {
         element[i].addEventListener("click", function () {
             $(".visited").removeClass("visited");
@@ -21,5 +21,4 @@ $(document).ready(function() {
 });
 $(document).ready(function(){
     $('#zlight-nav').zlightMenu();
-    $("#row").hide();
 });
