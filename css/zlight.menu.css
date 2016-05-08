@@ -6,10 +6,6 @@
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
-	filter: alpha(opacity=85);
-	-moz-opacity: 0.85;
-	-khtml-opacity: 0.85;
-	opacity: 0.85;
 }
 /*************
 * WRAP
@@ -19,6 +15,10 @@
 	position: relative;
 	width: auto;
 	z-index: 9999;
+	filter: alpha(opacity=85);
+	-moz-opacity: 0.85;
+	-khtml-opacity: 0.85;
+	opacity: 0.85;
 }
 /*************
 * MAIN NAV
