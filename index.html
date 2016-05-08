@@ -1,113 +1,134 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style>
-    .header {
-        text-align: center;
-        position: relative;
-        top: 150px;
-    }
-    
-    .img {
-        max-height: 60px;
-        max-width: 15%;
-    }
-    
-    .input {
-        text-indent: 5px;
-        border: 1px solid #b6b6b6;
-        border-color: #7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;
-        background: #fff;
-        display: inline-block;
-        vertical-align: top;
-        width: 539px;
-        height: 34px;
-        margin-right: 0;
-        border-right-width: 0;
-        border-color: #b8b8b8 transparent #ccc #b8b8b8;
-        overflow: hidden;
-        font-size: 20px;
-        font-family: "Microsoft YaHei";
-    }
-    
-    .butt {
-        border: 0px solid blue;
-        width: 100px;
-        height: 34px;
-        color: white;
-        font-size: 15px;
-        letter-spacing: 1px;
-        background: #3385ff;
-        outline: medium;
-        -webkit-appearance: none;
-        -webkit-border-radius: 0;
-    }
-    
-    .div-a {
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-	
-	div a {
-		cursor:pointer;
-	}
-    
-    .visited {
-        border-bottom: 2px solid #0014FF;
-        padding-bottom: 2px;
-    }
-    a:link {text-decoration:none;}
-    a:visited {text-decoration:none;}
-    a.mb {        
-        font-size: 15px;
-        color: black;
-        font-family: arial;
-    }
-    .mb-div {
-        position: absolute;
-        right: 20px;
-    }
-</style>
-<title>No Baido</title>
-<link rel="stylesheet" href="../css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/font-awesome.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <style>
+        .header {
+            text-align: center;
+            position: relative;
+            top: 150px;
+        }
+
+        .img {
+            max-height: 90px;
+            max-width: 15%;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        img.img-logo {
+            max-height: 100px;
+            max-width: 100px;
+        }
+
+        .input {
+            text-indent: 5px;
+            border: 1px solid #b6b6b6;
+            border-color: #7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;
+            background: #fff;
+            display: inline-block;
+            vertical-align: top;
+            width: 539px;
+            height: 34px;
+            margin-right: 0;
+            border-right-width: 0;
+            border-color: #b8b8b8 transparent #ccc #b8b8b8;
+            overflow: hidden;
+            font-size: 20px;
+            font-family: "Microsoft YaHei";
+        }
+
+        .butt {
+            border: 0px solid blue;
+            width: 100px;
+            height: 34px;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 1px;
+            background: #3385ff;
+            outline: medium;
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+        }
+
+        .div-a {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        div a {
+            cursor: pointer;
+        }
+
+        .visited {
+            border-bottom: 2px solid #0014FF;
+            padding-bottom: 2px;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a.mb {
+            font-size: 15px;
+            color: black;
+            font-family: arial;
+        }
+
+        .mb-div {
+            position: absolute;
+            right: 20px;
+        }
+
+        .div-a > a {
+            margin-left: 5px;
+            margin-right: 5px;
+            font-size: 17px;
+        }
+    </style>
+    <title>No Baido</title>
 </head>
 <body>
-    <div class="topline">
-        <div class="mb-div">
+<div class="topline">
+    <div class="mb-div">
         <i class="icon-envelope"></i>
         <a class="mb" href="messageBoard.html" target="_blank">留言建议</a>
-        </div>
     </div>
-    <div class="header">
-        <div>
-            <img class="img" src='./img/NoBaido.png'></img>
-            <img class="img" src='./img/logo.png'></img>
-            <img class="img" src='./img/NoBaido.png'></img>
-        </div>
-        <div class="div-a">
-            <a class="visited">搜索</a>
-            <a>英文搜索</a>
-            <a>文献</a>
-            <a>知乎</a>
-            <a>图片</a>
-            <a>视频</a>
-            <a>地图</a>
-            <a>兴趣</a>
-			<a>微博</a>
-			<a>图书</a>
-        </div>
-        <div>
-            <input id="input" class="input"></input><button class="butt" onclick="buttonClick()">Go</button>
-        </div>
+</div>
+<div class="header">
+    <div>
+        <img class="img" src='./img/NoBaido.png'></img>
+        <img class="img-logo" src='./img/logo.png'></img>
+        <img class="img" src='./img/NoBaido.png'></img>
     </div>
+    <div class="div-a">
+        <a class="visited">搜索</a>
+        <a>英文搜索</a>
+        <a>文献</a>
+        <a>知乎</a>
+        <a>图片</a>
+        <a>视频</a>
+        <a>地图</a>
+        <a>兴趣</a>
+        <a>微博</a>
+        <a>图书</a>
+    </div>
+    <div>
+        <input id="input" class="input"/><button class="butt" onclick="buttonClick()">Go</button>
+    </div>
+</div>
 </body>
 <script src="./js/jquery-1.12.2.js"></script>
 <script>
-    window.onload = function() {
+    window.onload = function () {
         var element = document.getElementsByClassName('div-a')[0].getElementsByTagName('a');
         for (var i = 0; i < element.length; i++) {
-            element[i].addEventListener("click", function() {
+            element[i].addEventListener("click", function () {
                 var el = document.getElementsByClassName('visited');
                 el[0].className = '';
                 this.setAttribute("class", "visited");
@@ -131,42 +152,42 @@
         } else if (text == '地图') {
             window.open("http://ditu.amap.com/search?query=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '文献') {
-			$.ajax({
-				url: 'http://epub.cnki.net/KNS/request/SearchHandler.ashx',
-				dataType: 'JSONP',
-				data: {
-					action:'',
-					NaviCode:'*',
-					ua:'1.11',
-					PageName:'ASP.brief_default_result_aspx',
-					DbPrefix:'SCDB',
-					DbCatalog:'中国学术文献网络出版总库',
-					ConfigFile:'SCDBINDEX.xml',
-					db_opt:'CJFQ,CJFN,CDFD,CMFD,CPFD,IPFD,CCND,CCJD,HBRD',
-					txt_1_sel:'FT$%=|',
-					txt_1_value1:document.getElementsByClassName('input')[0].value,
-					txt_1_special1:'%',
-					his:0,
-					parentdb:'SCDB',
-					_:new Date(),
-				},
-				error: function() {
-					window.open("http://epub.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&dbPrefix=SCDB&dbCatalog=中国学术文献网络出版总库&ConfigFile=SCDBINDEX.xml&research=off&t="+new Date()+"&keyValue="+document.getElementsByClassName('input')[0].value+"&S=1");
-				}
-			});
+            $.ajax({
+                url: 'http://epub.cnki.net/KNS/request/SearchHandler.ashx',
+                dataType: 'JSONP',
+                data: {
+                    action: '',
+                    NaviCode: '*',
+                    ua: '1.11',
+                    PageName: 'ASP.brief_default_result_aspx',
+                    DbPrefix: 'SCDB',
+                    DbCatalog: '中国学术文献网络出版总库',
+                    ConfigFile: 'SCDBINDEX.xml',
+                    db_opt: 'CJFQ,CJFN,CDFD,CMFD,CPFD,IPFD,CCND,CCJD,HBRD',
+                    txt_1_sel: 'FT$%=|',
+                    txt_1_value1: document.getElementsByClassName('input')[0].value,
+                    txt_1_special1: '%',
+                    his: 0,
+                    parentdb: 'SCDB',
+                    _: new Date(),
+                },
+                error: function () {
+                    window.open("http://epub.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&dbPrefix=SCDB&dbCatalog=中国学术文献网络出版总库&ConfigFile=SCDBINDEX.xml&research=off&t=" + new Date() + "&keyValue=" + document.getElementsByClassName('input')[0].value + "&S=1");
+                }
+            });
         } else if (text == '兴趣') {
             window.open("https://www.douban.com/group/search?cat=1019&q=" + document.getElementsByClassName('input')[0].value);
-        } else if(text == '微博') {
-			window.open("http://s.weibo.com/weibo/" + document.getElementsByClassName('input')[0].value+"&Refer=STopic_box");
-		} else if(text == '图书') {
-			window.open("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + document.getElementsByClassName('input')[0].value);
-		}
+        } else if (text == '微博') {
+            window.open("http://s.weibo.com/weibo/" + document.getElementsByClassName('input')[0].value + "&Refer=STopic_box");
+        } else if (text == '图书') {
+            window.open("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + document.getElementsByClassName('input')[0].value);
+        }
     }
-	$("#input").bind('keydown', function (e) {
-		var key = e.which;
-		if (key == 13) {
-			buttonClick();
-		}
-	  })
+    $("#input").bind('keydown', function (e) {
+        var key = e.which;
+        if (key == 13) {
+            buttonClick();
+        }
+    })
 </script>
 </html>
