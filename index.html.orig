@@ -1,4 +1,3 @@
-<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="Shortcut Icon" href="./img/logo.ico" type="image/ico">
@@ -146,7 +145,6 @@
             position: absolute;
             top: 0px;
             width: 99%;
-            z-index: -100;
         }
         .foot {
             text-align: center;
@@ -157,14 +155,76 @@
     </style>
     <title>No Baido</title>
 </head>
+<<<<<<< Updated upstream
 <body id="body" class="my-body">
+	<div class="topline">
+		<div class="mb-div">
+			<i class="icon-envelope"></i>
+			<a class="mb" href="messageBoard.html" target="_blank">留言建议</a>
+		</div>
+	</div>
+    <div id="header" class="header">
+        <div>
+            <img class="img" src='./img/NoBaido.png'></img>
+            <img class="img-logo" src='./img/logo.png'></img>
+            <img class="img" src='./img/NoBaido.png'></img>
+        </div>
+        <div class="div-a">
+            <a class="visited">搜索</a>
+            <a>英文搜索</a>
+            <a>文献</a>
+            <a>知乎</a>
+            <a>图片</a>
+            <a>视频</a>
+            <a>地图</a>
+            <a>兴趣</a>
+			<a>图书</a>
+        </div>
+        <div>
+            <input id="input" class="input"><button class="butt" onclick="buttonClick()">Go</button>
+        </div>
+    </div>
+	<div id="div-iframe" class="ui-layout-center">
+		  <div class="row" id="row">
+			<div class="col-lg-12">
+			  <nav id="zlight-nav">
+				<ul id="zlight-main-nav">
+					<li class="my-li my-li-s">
+					<img class="simg" src='./img/logoWhite.png'></img>
+					</li>
+					<li class="my-li my-li-l">
+					<img class="simg" src='./img/NoBaidoWhite.png'></img>
+					</li>
+				    <li class="zlight-dropdown my-li" style="margin-left:-20px;"> <a id="menu-text">搜索 <i class="icon-angle-down"></i></a>
+					<ul class="zlight-submenu">
+					  <li><a class="selected">搜索</a></li>
+					  <li><a>英文搜索</a></li>
+					  <li><a>文献</a></li>
+					  <li><a>知乎</a></li>
+					  <li><a>图片</a></li>
+					  <li><a>视频</a></li>
+					  <li><a>地图</a></li>
+					  <li><a>兴趣</a></li>
+					  <li><a>图书</a></li>
+					</ul>
+					</ul>
+					</li>
+					<li><input class="li-input" /></li>
+				</ul>
+			  </nav>	  
+			</div>
+		  </div>
+		<iframe class="iframe" id="crossWeb"></iframe>
+	</div>
+=======
+<body>
 <div class="topline">
     <div class="mb-div">
         <i class="icon-envelope"></i>
         <a class="mb" href="messageBoard.html" target="_blank">留言建议</a>
     </div>
 </div>
-<div id="header" class="header">
+<div class="header">
     <div>
         <img class="img" src='./img/NoBaido.png'>
         <img class="img-logo" src='./img/logo.png'>
@@ -179,50 +239,19 @@
         <a>视频</a>
         <a>地图</a>
         <a>兴趣</a>
+        <a>微博</a>
         <a>图书</a>
     </div>
     <div>
-        <input id="input" class="input"><button class="butt" onclick="buttonClick()">Go</button>
+        <input id="input" class="input"/><button class="butt" onclick="buttonClick()">Go</button>
     </div>
-</div>
-<div id="div-iframe" class="ui-layout-center">
-    <div class="row" id="row">
-        <div class="col-lg-12">
-            <nav id="zlight-nav">
-                <ul id="zlight-main-nav">
-                    <li class="my-li my-li-s">
-                        <img class="simg" src='./img/logoWhite.png'></img>
-                    </li>
-                    <li class="my-li my-li-l">
-                        <img class="simg" src='./img/NoBaidoWhite.png'></img>
-                    </li>
-                    <li class="zlight-dropdown my-li" style="margin-left:-20px;"><a id="menu-text">搜索 <i
-                            class="icon-angle-down"></i></a>
-                        <ul class="zlight-submenu">
-                            <li><a class="selected">搜索</a></li>
-                            <li><a>英文搜索</a></li>
-                            <li><a>文献</a></li>
-                            <li><a>知乎</a></li>
-                            <li><a>图片</a></li>
-                            <li><a>视频</a></li>
-                            <li><a>地图</a></li>
-                            <li><a>兴趣</a></li>
-                            <li><a>图书</a></li>
-                        </ul>
-                </ul>
-                </li>
-                <li><input class="li-input"/></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <iframe class="iframe" id="crossWeb"></iframe>
 </div>
 <div id="wrapper" style="display:block;">
-    <div class="foot">
-        <p class="statement">本站为非盈利公益页面，仅供学习与交流，有什么建议可点击右上角留言，欢迎加入我们共同优化</p>
-    </div>
+<div class="foot">
+<p class="statement">本站为非盈利公益页面，仅供学习与交流，有什么建议可点击右上角留言，欢迎加入我们共同优化</p>
 </div>
+</div>
+>>>>>>> Stashed changes
 </body>
 <script src="./js/jquery-1.12.2.js"></script>
 <script src="./js/jquery.layout-latest.js"></script>
