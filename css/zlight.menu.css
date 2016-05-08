@@ -13,7 +13,7 @@
 #zlight-nav{
 	display: block;
 	position: relative;
-	width: 100%;
+	width: auto;
 	z-index: 9999;
 }
 /*************

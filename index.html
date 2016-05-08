@@ -17,6 +17,12 @@
         max-height: 60px;
         max-width: 15%;
     }
+	.simg {
+		vertical-align:middle;
+		text-align:center;
+        max-height: 50px;
+		max-width: 110px;
+    }
     
     .input {
         border: 1px solid #b6b6b6;
@@ -72,9 +78,64 @@
 	.my-li{
 		color:#ffffff;
 	}
+	.my-li:hover｛
+		background-color: transparent;
+	｝
+	
+	a:link {
+		text-decoration: none;
+	}
+
+	a:visited {
+		text-decoration: none;
+	}
+
+	a.mb {
+		font-size: 15px;
+		color: black;
+		font-family: arial;
+	}
+
+	.mb-div {
+		position: absolute;
+		right: 20px;
+		z-index:10000;
+	}
+
+	.div-a > a {
+		margin-left: 5px;
+		margin-right: 5px;
+		font-size: 17px;
+	}
+	.my-li-s {
+		width:75px;
+		padding-left:20px !important;
+	}
+	.my-li-l {
+		width:180px;
+		padding-left:20px!important;
+		padding-right:20px!important;
+		padding-top:15px !important;
+	}
+	.li-input {
+		height:40px;
+		background:transparent;
+		color:#ffffff;
+		width:200;
+		border-top-style: none;
+		border-left-style: none;
+		border-right-style: none;
+		font-size: 20px;
+        font-family: "Microsoft YaHei";
+	}
 </style>
 <title>No Baido</title>
-
+<div class="topline">
+    <div class="mb-div">
+        <i class="icon-envelope"></i>
+        <a class="mb" href="messageBoard.html" target="_blank">留言建议</a>
+    </div>
+</div>
 <body id="body" class="my-body">
     <div id="header" class="header">
         <div>
@@ -91,7 +152,6 @@
             <a>视频</a>
             <a>地图</a>
             <a>兴趣</a>
-			<a>微博</a>
 			<a>图书</a>
         </div>
         <div>
@@ -103,9 +163,15 @@
 			<div class="col-lg-12">
 			  <nav id="zlight-nav">
 				<ul id="zlight-main-nav">
-				    <li class="zlight-dropdown my-li"> <a>搜索 <i class="icon-angle-down"></i></a>
+					<li class="my-li my-li-s">
+					<img class="simg" src='./img/logoWhite.png'></img>
+					</li>
+					<li class="my-li my-li-l">
+					<img class="simg" src='./img/NoBaidoWhite.png'></img>
+					</li>
+				    <li class="zlight-dropdown my-li" style="margin-left:-20px;"> <a id="menu-text">搜索 <i class="icon-angle-down"></i></a>
 					<ul class="zlight-submenu">
-					  <li><a class="visited">搜索</a></li>
+					  <li><a class="selected">搜索</a></li>
 					  <li><a>英文搜索</a></li>
 					  <li><a>文献</a></li>
 					  <li><a>知乎</a></li>
@@ -113,10 +179,11 @@
 					  <li><a>视频</a></li>
 					  <li><a>地图</a></li>
 					  <li><a>兴趣</a></li>
-					  <li><a>微博</a></li>
+					  <li><a>图书</a></li>
 					</ul>
 					</ul>
-				  </li>
+					</li>
+					<li><input class="li-input" /></li>
 				</ul>
 			  </nav>	  
 			</div>
@@ -130,64 +197,94 @@
 <script src="./js/respond.min.js"></script>
 <script src="./js/jquery.zlight.menu.1.0.min.js"></script>
 <script>
-    window.onload = function() {
-        var element = document.getElementsByTagName('a');
+    $(document).ready(function() { 
+        var element = document.getElementsByClassName('div-a')[0].getElementsByTagName('a');
         for (var i = 0; i < element.length; i++) {
-            element[i].addEventListener("click", function() {
-                var el = document.getElementsByClassName('visited');
-                el[0].className = '';
+            element[i].addEventListener("click", function () {
+                $(".visited").removeClass("visited");
                 this.setAttribute("class", "visited");
             });
         }
-    }
+    });
+	
+	$(document).ready(function() { 
+		var element = $(".zlight-submenu").find("a");
+		for (var i = 0; i < element.length; i++) {
+				element[i].addEventListener("click", function () {
+				$(".selected").removeClass("selected");
+				this.setAttribute("class", "selected");
+				$("#menu-text").text(this.text);
+				buttonClick();
+			});
+		}
+    });
 
     function buttonClick() {
         var el = document.getElementsByClassName('visited');
-        var text = el[0].text.replace(/[\r\n]/g, " ");
+		var text = '';
+		var value = '';
+		if(el.length != 0) {
+			text = el[0].text.replace(/[\r\n]/g, " ");
+			value = $(".input").val();
+		}
+		else {
+			el = document.getElementsByClassName('selected');
+			text = el[0].text.replace(/[\r\n]/g, " ");
+			value = $(".li-input").val();
+		}
         if (text == '搜索') {
-			test("http://cn.bing.com/search?q=" + document.getElementsByClassName('input')[0].value);
+			urlLink("http://cn.bing.com/search?q=" + value);
             //window.open("http://cn.bing.com/search?q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '英文搜索') {
-            window.open("http://global.bing.com/search?q=" + document.getElementsByClassName('input')[0].value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
+            urlLink("http://global.bing.com/search?q=" + value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
+			//window.open("http://global.bing.com/search?q=" + document.getElementsByClassName('input')[0].value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
         } else if (text == '知乎') {
-            window.open("https://www.zhihu.com/search?type=content&q=" + document.getElementsByClassName('input')[0].value);
+            urlLink("https://www.zhihu.com/search?type=content&q=" + value);
+			//window.open("https://www.zhihu.com/search?type=content&q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '图片') {
-            window.open("http://cn.bing.com/images/search?q=" + document.getElementsByClassName('input')[0].value);
+            urlLink("http://cn.bing.com/images/search?q=" + value);
+			//window.open("http://cn.bing.com/images/search?q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '视频') {
-            window.open("http://cn.bing.com/videos/search?q=" + document.getElementsByClassName('input')[0].value);
+            urlLink("http://cn.bing.com/videos/search?q=" + value);
+			//window.open("http://cn.bing.com/videos/search?q=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '地图') {
-            window.open("http://ditu.amap.com/search?query=" + document.getElementsByClassName('input')[0].value);
+			urlLink("http://ditu.amap.com/search?query=" + value);
+			//window.open("http://ditu.amap.com/search?query=" + document.getElementsByClassName('input')[0].value);
         } else if (text == '文献') {
-			$.ajax({
-				url: 'http://epub.cnki.net/KNS/request/SearchHandler.ashx',
-				dataType: 'JSONP',
-				data: {
-					action:'',
-					NaviCode:'*',
-					ua:'1.11',
-					PageName:'ASP.brief_default_result_aspx',
-					DbPrefix:'SCDB',
-					DbCatalog:'中国学术文献网络出版总库',
-					ConfigFile:'SCDBINDEX.xml',
-					db_opt:'CJFQ,CJFN,CDFD,CMFD,CPFD,IPFD,CCND,CCJD,HBRD',
-					txt_1_sel:'FT$%=|',
-					txt_1_value1:document.getElementsByClassName('input')[0].value,
-					txt_1_special1:'%',
-					his:0,
-					parentdb:'SCDB',
-					_:new Date(),
-				},
-				error: function() {
-					window.open("http://epub.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&dbPrefix=SCDB&dbCatalog=中国学术文献网络出版总库&ConfigFile=SCDBINDEX.xml&research=off&t="+new Date()+"&keyValue="+document.getElementsByClassName('input')[0].value+"&S=1");
-				}
-			});
+            $.ajax({
+                url: 'http://epub.cnki.net/KNS/request/SearchHandler.ashx',
+                dataType: 'JSONP',
+                data: {
+                    action: '',
+                    NaviCode: '*',
+                    ua: '1.11',
+                    PageName: 'ASP.brief_default_result_aspx',
+                    DbPrefix: 'SCDB',
+                    DbCatalog: '中国学术文献网络出版总库',
+                    ConfigFile: 'SCDBINDEX.xml',
+                    db_opt: 'CJFQ,CJFN,CDFD,CMFD,CPFD,IPFD,CCND,CCJD,HBRD',
+                    txt_1_sel: 'FT$%=|',
+                    txt_1_value1: value,
+                    txt_1_special1: '%',
+                    his: 0,
+                    parentdb: 'SCDB',
+                    _: new Date(),
+                },
+                error: function () {
+                    urlLink("http://epub.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&dbPrefix=SCDB&dbCatalog=中国学术文献网络出版总库&ConfigFile=SCDBINDEX.xml&research=off&t=" + new Date() + "&keyValue=" + value + "&S=1");
+					//window.open("http://epub.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&dbPrefix=SCDB&dbCatalog=中国学术文献网络出版总库&ConfigFile=SCDBINDEX.xml&research=off&t=" + new Date() + "&keyValue=" + document.getElementsByClassName('input')[0].value + "&S=1");
+                }
+            });
         } else if (text == '兴趣') {
-            window.open("https://www.douban.com/group/search?cat=1019&q=" + document.getElementsByClassName('input')[0].value);
-        } else if(text == '微博') {
-			window.open("http://s.weibo.com/weibo/" + document.getElementsByClassName('input')[0].value+"&Refer=STopic_box");
-		} else if(text == '图书') {
-			window.open("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + document.getElementsByClassName('input')[0].value);
-		}
+			urlLink("https://www.douban.com/group/search?cat=1019&q=" + value);
+			//window.open("https://www.douban.com/group/search?cat=1019&q=" + document.getElementsByClassName('input')[0].value);
+        } else if (text == '微博') {
+            urlLink("http://s.weibo.com/weibo/" + value + "&Refer=STopic_box");
+			//window.open("http://s.weibo.com/weibo/" + document.getElementsByClassName('input')[0].value + "&Refer=STopic_box");
+        } else if (text == '图书') {
+            urlLink("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + value);
+			//window.open("https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=亚马逊网站&url=search-alias%3Daps&field-keywords=" + document.getElementsByClassName('input')[0].value);
+        }
     }
 	$("#input").bind('keydown', function (e) {
 		var key = e.which;
@@ -196,11 +293,23 @@
 		}
 	  })
 	  
-	  function test(url) {
+	$(".li-input").bind('keydown', function (e) {
+		var key = e.which;
+		if (key == 13) {
+			buttonClick();
+		}
+	  })
+	  
+	  function urlLink(url) {
 		var iframe = $("#crossWeb").attr("src",url);
 		iframe.onload = function () {
 			var data = iframe.contentWindow;
+			alert(data);
 		}
+		if(!isNull($(".input").val()))
+			$(".li-input").val($(".input").val());
+		if(!isNull($(".visited").text()))
+			$("#menu-text").text($(".visited").text());
 		resizeBody();
 		iframe.show();
 	  }
@@ -208,14 +317,21 @@
 		   $('body').layout({
         });  
 		$("#header").hide();
+		$("#header").empty();
 		$("#div-iframe").css("top", "0px");
 		$("#div-iframe").height("100%");
 		$("#row").show();
-		$("#row").height("40px;");
-	  }
+		$("#row").height("50px;");
+		$(".icon-envelope").css("color", "#ffffff");
+		$(".mb").css("color", "#ffffff");
+		}
 	  $(document).ready(function(){
         $('#zlight-nav').zlightMenu();
 		$("#row").hide();
 	  });
+	  function isNull(obj) {
+		if (typeof(obj)=="undefined" || obj==0 || obj ==null) return true;
+		return false;
+	  }
 </script>
 </html>
