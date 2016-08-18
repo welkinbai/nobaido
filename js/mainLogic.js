@@ -13,22 +13,22 @@ function buttonClick() {
         value = $(".li-input").val();
     }
     if (text == '搜索') {
-        urlLink("http://cn.bing.com/search?q=" + value);
+        urlLink("https://cn.bing.com/search?q=" + value);
         //window.open("http://cn.bing.com/search?q=" + document.getElementsByClassName('input')[0].value);
     } else if (text == '英文搜索') {
-        urlLink("http://global.bing.com/search?q=" + value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
+        urlLink("https://global.bing.com/search?q=" + value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
         //window.open("http://global.bing.com/search?q=" + document.getElementsByClassName('input')[0].value + "&setmkt=en-us&setlang=en-us&FORM=SECNEN");
     } else if (text == '知乎') {
         //urlLink("https://www.zhihu.com/search?type=content&q=" + value);
         window.open("https://www.zhihu.com/search?type=content&q=" + value);
     } else if (text == '图片') {
-        urlLink("http://cn.bing.com/images/search?q=" + value);
+        urlLink("https://cn.bing.com/images/search?q=" + value);
         //window.open("http://cn.bing.com/images/search?q=" + document.getElementsByClassName('input')[0].value);
     } else if (text == '视频') {
-        urlLink("http://cn.bing.com/videos/search?q=" + value);
+        urlLink("https://cn.bing.com/videos/search?q=" + value);
         //window.open("http://cn.bing.com/videos/search?q=" + document.getElementsByClassName('input')[0].value);
     } else if (text == '地图') {
-        urlLink("http://ditu.amap.com/search?query=" + value);
+        urlLink("https://ditu.amap.com/search?query=" + value);
         //window.open("http://ditu.amap.com/search?query=" + document.getElementsByClassName('input')[0].value);
     } else if (text == '文献') {
         $.ajax({
